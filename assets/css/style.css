@@ -1,0 +1,128 @@
+/* Black do Aluno: lousa (quadro verde-escuro) alternando com papel de caderno.
+   Marca-texto amarelo = ação. Caneta vermelha = correção do professor. */
+body{margin:0;background:#F6F7F2}
+[hidden]{display:none !important}
+.lp{container-type:inline-size;font-family:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;color:#17201B;background:#F6F7F2;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.lp *{box-sizing:border-box}
+.lp a{color:#14221B}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.disp{font-family:"Anybody","Arial Narrow",Impact,sans-serif;font-stretch:72%;font-weight:850;text-transform:uppercase;line-height:.96;letter-spacing:-.005em;text-wrap:balance;margin:0}
+.hand{font-family:"Caveat","Comic Sans MS",cursive;font-weight:700}
+
+/* Faixa corrida de Black Friday */
+.ticker{overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;align-items:center;gap:28px;padding-block:11px;animation:tick 26s linear infinite;will-change:transform}
+.ticker-track span{display:inline-flex;align-items:center;gap:28px;font-family:"Anybody","Arial Narrow",Impact,sans-serif;font-stretch:80%;font-weight:850;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px 64px;align-items:center;padding-block:48px 80px}
+.hero-video{grid-row:span 2}
+.cta-hero{grid-column:1}
+.bf{font-family:"Anybody",Impact,"Arial Narrow",sans-serif;font-stretch:62%;font-weight:900;text-transform:uppercase;line-height:.8;letter-spacing:-.01em;margin:0;font-size:150px;color:#FFFFFF;display:flex;flex-direction:column}
+.bf .fri{color:#FFD43B}
+.bf-tag{display:inline-block;font-family:"Anybody","Arial Narrow",Impact,sans-serif;font-stretch:80%;font-weight:850;font-size:17px;letter-spacing:.08em;text-transform:uppercase;background:#E0483A;color:#FFFFFF;padding:8px 14px;border-radius:6px;transform:rotate(-3deg)}
+
+/* Botão principal, com pulso */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:64px;padding:18px 34px;border-radius:14px;font-family:"Anybody","Arial Narrow",Impact,sans-serif;font-stretch:88%;font-weight:850;font-size:21px;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;color:#14221B !important;box-shadow:0 6px 0 #B89400,0 14px 28px rgba(10,20,15,.28);text-align:center;line-height:1.1;animation:pulse 1.8s ease-in-out infinite}
+.btn:before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(255,212,59,.65);animation:ring 1.8s ease-out infinite;pointer-events:none}
+.btn:hover{animation-play-state:paused;transform:translateY(-2px) scale(1.02)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #B89400,0 6px 12px rgba(10,20,15,.25)}
+.btn:focus-visible{outline:3px solid #FFFFFF;outline-offset:5px}
+.on-paper .btn:focus-visible{outline-color:#14221B}
+.btn svg{flex:none}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,212,59,.6)}80%,100%{box-shadow:0 0 0 18px rgba(255,212,59,0)}}
+.sub-cta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14.5px;margin-top:18px}
+.sub-cta span{display:inline-flex;align-items:center;gap:6px}
+.hl{background:#FFD43B;color:#14221B;padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:3px}
+
+/* Benefícios */
+.two{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.notebook{background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px,transparent 1px);background-size:100% 44px;background-position:0 36px;border-radius:6px;box-shadow:0 1px 0 #E2E5DD,0 18px 40px rgba(20,34,27,.10);position:relative;padding:36px 32px 28px 76px}
+.notebook:before{content:"";position:absolute;top:0;bottom:0;left:56px;width:2px;background:#E8A39C}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.checks li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start;padding-block:10px;line-height:1.5}
+
+/* Oferta */
+.offer{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:28px;align-items:start}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:13px;border-bottom:1px solid;font-size:16.5px;line-height:1.35}
+.rows li:last-child{border-bottom:0}
+.rows .item{min-width:0}
+.rows .val{flex:none;text-align:right;white-space:nowrap}
+.strike{text-decoration:line-through;text-decoration-color:#E0483A;text-decoration-thickness:2.5px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.tbc{display:inline-block;font-size:13px;font-weight:700;padding:2px 8px;border:1.5px dashed #B89400;background:#FFF6CC;color:#5C4A00;border-radius:6px}
+.stamp{position:absolute;top:-22px;right:26px;transform:rotate(-5deg);font-family:"Anybody","Arial Narrow",Impact,sans-serif;font-stretch:80%;font-weight:850;font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:#C8322A;background:#FFFFFF;border:3px solid #C8322A;outline:1.5px solid #C8322A;outline-offset:3px;padding:6px 14px;border-radius:6px}
+
+/* Mural de depoimentos: prints de tamanhos diferentes em colunas, presos com fita */
+.mural{column-count:2;column-gap:36px;width:100%;max-width:980px}
+.print{break-inside:avoid;position:relative;margin:0 0 40px;padding:10px;background:#FFFFFF;border-radius:14px;box-shadow:0 2px 0 #E2E5DD,0 16px 34px rgba(20,34,27,.14)}
+.print img{display:block;width:100%;max-width:100%;height:auto;border-radius:8px}
+.print:nth-child(odd){transform:rotate(-1.2deg)}
+.print:nth-child(even){transform:rotate(1deg)}
+.print:after{content:"";position:absolute;top:-14px;left:50%;width:110px;height:28px;margin-left:-55px;background:rgba(255,212,59,.78);transform:rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+/* Passos */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+
+/* Autoridade */
+.bio{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:72px;align-items:center}
+
+/* FAQ */
+.faq details{border-bottom:1.5px solid #D9DED5}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:22px;font-weight:700;font-size:19px;line-height:1.35;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:focus-visible{outline:3px solid #14221B;outline-offset:4px;border-radius:4px}
+.faq .plus{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#E9EEE7;transition:transform .2s ease}
+.faq details[open] .plus{transform:rotate(45deg);background:#FFD43B}
+.faq .ans{padding:0 56px 24px 0;color:#3A4740;font-size:17.5px}
+.wa{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:14px 26px;border-radius:14px;border:2px solid #14221B;color:#14221B;font-weight:700;font-size:17px;text-decoration:none;background:transparent}
+.wa:hover{background:#14221B;color:#FFFFFF !important}
+.wa:focus-visible{outline:3px solid #14221B;outline-offset:4px}
+
+/* Player do vídeo (estilo VTURB) */
+.player{position:relative;aspect-ratio:9/16;width:100%;max-width:100%;border-radius:22px;overflow:hidden;background:#0C1611;border:2px solid #2E4639;box-shadow:0 0 0 8px #1B2D23,0 30px 60px rgba(0,0,0,.45)}
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#0C1611}
+.player-hit{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0;background:transparent;cursor:pointer;z-index:2}
+.player-hit:focus-visible{outline:3px solid #FFD43B;outline-offset:-6px;border-radius:20px}
+.player-ov{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;padding:20px;pointer-events:none}
+.player-card{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;background:rgba(224,72,58,.94);color:#FFFFFF;border-radius:18px;padding:22px 20px;max-width:250px;box-shadow:0 18px 40px rgba(0,0,0,.4);animation:cardpulse 1.6s ease-in-out infinite}
+.player-card b{font-family:"Anybody","Arial Narrow",Impact,sans-serif;font-stretch:80%;font-weight:850;font-size:21px;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+.player-card span{font-size:15px;line-height:1.3;font-weight:700}
+.player-card.is-pause{background:rgba(20,34,27,.88);animation:none}
+.player-bar{position:absolute;left:0;right:0;bottom:0;height:7px;background:rgba(255,255,255,.18);z-index:4}
+.player-bar i{display:block;height:100%;width:0;background:#FFD43B;transition:width .25s linear}
+@keyframes cardpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+@media (prefers-reduced-motion:reduce){.player-card{animation:none}.btn,.btn:before,.ticker-track{animation:none}.faq .plus{transition:none}}
+
+/* Celular */
+@container (max-width: 860px){
+  .lp{font-size:17px}
+  .hero{grid-template-columns:minmax(0,1fr);gap:26px;padding-block:28px 56px}
+  .hero-video{grid-row:auto;justify-self:center;width:min(100%,330px)}
+  .bf{font-size:27cqw}
+  .bf-tag{font-size:15px}
+  .two,.offer,.bio{grid-template-columns:minmax(0,1fr);gap:36px}
+  .notebook{padding:28px 18px 20px 52px}
+  .notebook:before{left:36px}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .mural{column-count:1}
+  .print{margin-bottom:32px}
+  .btn{width:100%;font-size:19px;padding:18px 20px}
+  .h-xl{font-size:40px !important}
+  .h-l{font-size:38px !important}
+  .price{font-size:68px !important;white-space:nowrap}
+  .stamp{right:16px;font-size:14px}
+  .faq .ans{padding-right:0}
+  .faq summary{font-size:17.5px}
+  .sec{padding-block:64px !important}
+  /* Textos centralizados no celular; listas de itens seguem alinhadas à esquerda para leitura */
+  .mc{text-align:center !important;align-items:center !important;justify-content:center}
+  .bf{align-items:center}
+  .cta-hero{text-align:center}
+  .sub-cta{justify-content:center}
+  .hand{transform-origin:center !important}
+}
