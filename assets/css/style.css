@@ -125,4 +125,22 @@ body{margin:0;background:#F6F7F2}
   .cta-hero{text-align:center}
   .sub-cta{justify-content:center}
   .hand{transform-origin:center !important}
+
+  /* Primeira dobra no celular: Black Friday e título mais compactos, vídeo inteiro na tela.
+     O texto de apoio desce para logo abaixo do vídeo. */
+  .hero{gap:12px;padding-block:16px 48px}
+  .hero-copy{display:contents !important}
+  .hero-brand{order:1;justify-self:center;font-size:13px}
+  .hero-bf{order:2;justify-self:center;gap:8px !important}
+  .bf{flex-direction:row;gap:.22em;font-size:12.5cqw;line-height:.9}
+  .bf-tag{font-size:12.5px;padding:5px 10px}
+  .hero-h1{order:3;font-size:25px !important;text-align:center;margin-top:2px !important}
+  .hero-watch{order:4;justify-self:center;font-size:15px !important}
+  .hero-video{order:5;width:clamp(170px,calc((100vh - 352px) * .5625),330px);width:clamp(170px,calc((100svh - 352px) * .5625),330px)}
+  .hero-sub{order:6;text-align:center;font-size:17px !important;margin-top:8px !important}
+  .cta-hero{order:7}
+  .player-card{padding:14px 12px;gap:8px;max-width:84%}
+  .player-card svg{width:30px;height:30px}
+  .player-card b{font-size:17px}
+  .player-card span{font-size:13.5px}
 }
